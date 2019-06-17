@@ -7,9 +7,12 @@ import createNumberMask from 'text-mask-addons/dist/createNumberMask';
   selector: 'formly-field-input-money',
   template: `
 
-
-     <input  type="text"  [textMask]="{mask: numberMask}" [formControl]="formControl" [formlyAttributes]="field">
-
+     <mat-form-field appearance="standard">
+     <mat-label>  {{ to.label }} </mat-label>
+     <input matInput type="text"  [textMask]="{mask: numberMask}" [formControl]="formControl" [formlyAttributes]="field">
+     <mat-error></mat-error>
+     <mat-hint></mat-hint>
+   </mat-form-field>
 
  `,
 })

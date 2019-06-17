@@ -27,53 +27,46 @@ export class AppComponent {
   options: FormlyFormOptions = {};
 
   fields: FormlyFieldConfig[] = [this.formlyJsonschema.toFieldConfig(
- this.getMe()
+ this.getMeForm()
   )];
 
   constructor(private formlyJsonschema: FormlyJsonschema) {}
 
-getMe() {
+getMeForm() {
   return    {
-    'title': 'A list of tasks',
+    'title': 'A registration form',
+    'description': 'A simple form example.',
     'type': 'object',
     'required': [
-      'title',
+      'lastName',
     ],
     'properties': {
-      'title': {
-        'type': 'money',
-        'title': 'Task list title',
+      'firstName': {
+        'type': 'string',
+        'title': 'First name',
+        'required': 'true'
       },
-           'test': {
+      'lastName': {
+        'type': 'string',
+        'title': 'Last name',
+      },
+      'age': {
         'type': 'integer',
-        'title': 'Test',
+        'title': 'Age',
       },
-      'tasks': {
-        'type': 'array',
-        'title': 'Tasks',
-        'items': {
-          'type': 'object',
-          'required': [
-            'title',
-          ],
-          'properties': {
-            'title': {
-              'type': 'string',
-              'title': 'Title',
-              'description': 'A sample title',
-            },
-            'details': {
-              'type': 'string',
-              'title': 'Task details',
-              'description': 'Enter the task details',
-            },
-            'done': {
-              'type': 'boolean',
-              'title': 'Done?',
-              'default': false,
-            },
-          },
-        },
+      'bio': {
+        'type': 'string',
+        'title': 'Bio',
+      },
+      'password': {
+        'type': 'string',
+        'title': 'Password',
+        'minLength': 3,
+      },
+      'telephone': {
+        'type': 'string',
+        'title': 'Telephone',
+        'minLength': 10,
       },
     },
   }
