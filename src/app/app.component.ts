@@ -10,41 +10,33 @@ import { FormlyJsonschema } from '@ngx-formly/core/json-schema';
 export class AppComponent {
   form = new FormGroup({});
   model: any = {
-    'title': 'My current tasks',
-    'tasks': [
-      {
-        'title': 'My first task',
-        'details': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        'done': true,
-      },
-      {
-        'title': 'My second task',
-        'details': 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur',
-        'done': false,
-      },
-    ],
+    firstName: 'Chucky',
+    lastName: 'Norris',
+    age: 75,
+    bio: 'Roundhouse kicking asses since 1940',
+    password: 'noneed',
   };
   options: FormlyFormOptions = {};
 
   fields: FormlyFieldConfig[] = [this.formlyJsonschema.toFieldConfig(
- this.getMeForm()
+this.getJSONSchema()
   )];
-
   constructor(private formlyJsonschema: FormlyJsonschema) {}
 
-getMeForm() {
-  return    {
+getJSONSchema() {
+
+return     {
     'title': 'A registration form',
     'description': 'A simple form example.',
     'type': 'object',
     'required': [
+      'firstName',
       'lastName',
     ],
     'properties': {
       'firstName': {
         'type': 'string',
         'title': 'First name',
-        'required': 'true'
       },
       'lastName': {
         'type': 'string',
@@ -70,7 +62,10 @@ getMeForm() {
       },
     },
   }
+
+
 }
+
 
   submit() {
     alert(JSON.stringify(this.model));

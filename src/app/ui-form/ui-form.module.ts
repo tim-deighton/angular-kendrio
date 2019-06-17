@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { TextMaskModule } from 'angular2-text-mask';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 import { PanelWrapperComponent, 
 // ErrorWrapperComponent, 
@@ -32,6 +33,7 @@ import { config } from './config';
     // AppMaterialModule,
     // NgSelectModule
     // SharedModule
+    FormlyBootstrapModule,
   ],
   exports: [
     FormsModule,
