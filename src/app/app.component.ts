@@ -54,7 +54,11 @@ return     {
       },
             'country': {
         'type': 'typeahead',
-        'title': 'Last name',
+        'title': 'Country',
+           'items': {
+          'type': 'string',
+          'default': 'bazinga',
+        },
       },
       'age': {
         'type': 'integer',
@@ -74,15 +78,24 @@ return     {
         'minLength': 3,
       },
       'telephone': {
-        'type': 'string',
+        'type': 'radio',
         'title': 'Telephone',
-        'minLength': 10,
+      
+          'enum': [
+            'foo',
+            'bar',
+            'fuzz',
+            'qux',
+          ],
+  
       },
             'pay': {
         'type': 'money',
         'title': 'Income',
         'minLength': 10,
       },
+
+ 
     },
   }
 
