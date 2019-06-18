@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { TextMaskModule } from 'angular2-text-mask';
-import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+// import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 import { PanelWrapperComponent, 
 // ErrorWrapperComponent, 
@@ -25,13 +25,11 @@ import { FormlyMaterialModule } from '@ngx-formly/material';
 
 
 import {
-
   MatButtonToggleModule,
   MatCheckboxModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-
   MatRadioModule,
   MatSelectModule,
   MatSliderModule,
@@ -50,7 +48,8 @@ import {
     // AppMaterialModule,
     // NgSelectModule
     // SharedModule
-    FormlyBootstrapModule,
+    // FormlyBootstrapModule,
+    FormlyMaterialModule,
 
     MatButtonToggleModule,
     MatButtonModule,
@@ -61,15 +60,21 @@ import {
     MatRadioModule,
     MatSelectModule,
     MatSliderModule,
-
-
-
   ],
   exports: [
     FormsModule,
     ReactiveFormsModule,
     FormlyModule,
     FormlyMaterialModule ,  
+    MatButtonToggleModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatSliderModule,
     // NgSelectModule
   ],
   declarations: [

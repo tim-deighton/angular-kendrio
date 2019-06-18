@@ -13,7 +13,6 @@
     "@angular/platform-browser": "8.0.1",
     "@angular/platform-browser-dynamic": "8.0.1",
     "@ng-select/ng-select": "^2.20.0",
-    "@ngx-formly/bootstrap": "^5.1.9",
     "@ngx-formly/core": "^5.1.9",
     "@ngx-formly/material": "^5.1.9",
     "angular2-text-mask": "9.0.0",
