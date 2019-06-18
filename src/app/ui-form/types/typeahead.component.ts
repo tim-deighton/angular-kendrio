@@ -8,8 +8,7 @@ import { takeUntil, startWith, filter, debounceTime, distinctUntilChanged, switc
 @Component({
     selector: 'formly-field-typeahead',
     template: `
-      <h1>Angular ng-select <small class="text-muted"><a target="_blank" href="https://github.com/ng-select/ng-select">Open in Github</a></small></h1>
-        <label>Your first ng-select</label>
+    <label>{{to.label}}</label>
         <ng-select [items]="cities"
                    bindLabel="Name"
                    placeholder="Select Country"
@@ -19,10 +18,7 @@ import { takeUntil, startWith, filter, debounceTime, distinctUntilChanged, switc
     <b> {{item.Name}}</b>  ({{item.Code}})
 </ng-template>
         </ng-select>
-        <p>
-            Selected city: {{selectedCity | json}}
-        </p>
-        <hr />
+
   
     `,
     styleUrls: ['./typeahead.component.scss'],
