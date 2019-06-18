@@ -13,15 +13,31 @@ import { PanelWrapperComponent,
 
 
 // import { RepeatSectionComponent } from './types/repeat-section.component';
-// import { FormlyFieldInputMoney } from './types/money.component';
+import { FormlyFieldInputMoney } from './types/money.component';
 // import { FormlyFieldInputPercentage } from './types/percentage.component';
 
 import { config } from './config';
-// import { FormlyMaterialModule } from '@ngx-formly/material';
+import { FormlyMaterialModule } from '@ngx-formly/material';
 // import { AppMaterialModule } from './app/app-material/app-material.module';
 // import { FormlyFieldTypeahead } from './types/typeahead.component';
 // import { NgSelectModule } from '@ng-select/ng-select';
 // import { SharedModule } from '../shared.module';
+
+
+import {
+
+  MatButtonToggleModule,
+  MatCheckboxModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+
+  MatRadioModule,
+  MatSelectModule,
+  MatSliderModule,
+  MatButtonModule
+} from '@angular/material';
+
 
 @NgModule({
   imports: [
@@ -30,16 +46,30 @@ import { config } from './config';
     ReactiveFormsModule,
     FormlyModule.forRoot(config),
     TextMaskModule,
+   
     // AppMaterialModule,
     // NgSelectModule
     // SharedModule
     FormlyBootstrapModule,
+
+    MatButtonToggleModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatSliderModule,
+
+
+
   ],
   exports: [
     FormsModule,
     ReactiveFormsModule,
     FormlyModule,
-    // FormlyMaterialModule ,  
+    FormlyMaterialModule ,  
     // NgSelectModule
   ],
   declarations: [
@@ -47,7 +77,7 @@ import { config } from './config';
     // ErrorWrapperComponent,
     // AnimationWrapperComponent,
     // RepeatSectionComponent,
-    // FormlyFieldInputMoney,
+    FormlyFieldInputMoney,
     // FormlyFieldInputPercentage,
     // FormlyFieldTypeahead
 

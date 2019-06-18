@@ -9,9 +9,11 @@ import {
   } from './helpers/validations-messages';
 
   import { maximumNumValidation, passwordMatchValidation, PasswordStrengthValidation } from './helpers/validators';
-  import { PanelWrapperComponent, AnimationWrapperComponent, ErrorWrapperComponent } from './wrappers';
+  import { PanelWrapperComponent, 
+  // AnimationWrapperComponent, ErrorWrapperComponent 
+  } from './wrappers';
   // import { RepeatSectionComponent } from './types/repeat-section.component';
-  // import { FormlyFieldInputMoney } from './types/money.component';
+  import { FormlyFieldInputMoney } from './types/money.component';
   // import { FormlyFieldInputPercentage } from './types/percentage.component';
   import { ConfigOption } from '@ngx-formly/core';
 // import { FormlyFieldTypeahead } from './types/typeahead.component';
@@ -29,12 +31,12 @@ import {
     ],
     wrappers: [
       { name: 'panel', component: PanelWrapperComponent },
-      { name: 'error-on-top', component: ErrorWrapperComponent },
-      { name: 'slideInOut', component: AnimationWrapperComponent }
+      // { name: 'error-on-top', component: ErrorWrapperComponent },
+      // { name: 'slideInOut', component: AnimationWrapperComponent }
     ],
     types: [
       // { name: 'repeat', component: RepeatSectionComponent },
-      // { name: 'money', component: FormlyFieldInputMoney },
+      { name: 'money', component: FormlyFieldInputMoney },
       // { name: 'percentage', component: FormlyFieldInputPercentage },
       // { name: 'typeahead', component: FormlyFieldTypeahead },
               {

@@ -60,6 +60,11 @@ return     {
         'title': 'Telephone',
         'minLength': 10,
       },
+            'pay': {
+        'type': 'money',
+        'title': 'Income',
+        'minLength': 10,
+      },
     },
   }
 

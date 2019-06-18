@@ -15,6 +15,7 @@
     "@ng-select/ng-select": "^2.20.0",
     "@ngx-formly/bootstrap": "^5.1.9",
     "@ngx-formly/core": "^5.1.9",
+    "@ngx-formly/material": "^5.1.9",
     "angular2-text-mask": "9.0.0",
     "bootstrap": "4.3.1",
     "core-js": "2",
