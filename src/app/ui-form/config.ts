@@ -16,7 +16,7 @@ import {
   import { FormlyFieldInputMoney } from './types/money.component';
   // import { FormlyFieldInputPercentage } from './types/percentage.component';
   import { ConfigOption } from '@ngx-formly/core';
-// import { FormlyFieldTypeahead } from './types/typeahead.component';
+import { FormlyFieldTypeahead } from './types/typeahead.component';
 
   export const config: ConfigOption = {
     validationMessages: [
@@ -38,7 +38,7 @@ import {
       // { name: 'repeat', component: RepeatSectionComponent },
       { name: 'money', component: FormlyFieldInputMoney },
       // { name: 'percentage', component: FormlyFieldInputPercentage },
-      // { name: 'typeahead', component: FormlyFieldTypeahead },
+      { name: 'typeahead', component: FormlyFieldTypeahead },
               {
           name: 'number',
           extends: 'input',

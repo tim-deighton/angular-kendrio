@@ -11,6 +11,8 @@ const states = [{'Code': 'AF', 'Name': 'Afghanistan'}, {'Code': 'AX', 'Name': '\
 @Component({
     selector: 'formly-field-typeahead',
     template: `
+{{to.label}}
+
     <ng-select [items]="options$ | async"
      [typeahead]="search$"
     bindLabel="Name"

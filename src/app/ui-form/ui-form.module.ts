@@ -19,8 +19,8 @@ import { FormlyFieldInputMoney } from './types/money.component';
 import { config } from './config';
 import { FormlyMaterialModule } from '@ngx-formly/material';
 // import { AppMaterialModule } from './app/app-material/app-material.module';
-// import { FormlyFieldTypeahead } from './types/typeahead.component';
-// import { NgSelectModule } from '@ng-select/ng-select';
+import { FormlyFieldTypeahead } from './types/typeahead.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 // import { SharedModule } from '../shared.module';
 
 
@@ -46,7 +46,7 @@ import {
     TextMaskModule,
    
     // AppMaterialModule,
-    // NgSelectModule
+    NgSelectModule,
     // SharedModule
     // FormlyBootstrapModule,
     FormlyMaterialModule,
@@ -75,7 +75,7 @@ import {
     MatRadioModule,
     MatSelectModule,
     MatSliderModule,
-    // NgSelectModule
+    NgSelectModule
   ],
   declarations: [
     PanelWrapperComponent,
@@ -84,7 +84,7 @@ import {
     // RepeatSectionComponent,
     FormlyFieldInputMoney,
     // FormlyFieldInputPercentage,
-    // FormlyFieldTypeahead
+    FormlyFieldTypeahead
 
   ]
 })

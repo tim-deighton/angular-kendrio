@@ -42,6 +42,10 @@ return     {
         'type': 'string',
         'title': 'Last name',
       },
+            'country': {
+        'type': 'typeahead',
+        'title': 'Last name',
+      },
       'age': {
         'type': 'integer',
         'title': 'Age',
