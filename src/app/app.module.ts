@@ -7,6 +7,8 @@ import { FormlyModule } from '@ngx-formly/core';
 import { AppComponent } from './app.component';
 // import { TextMaskModule } from 'angular2-text-mask';
 // import { ArrayTypeComponent } from './ui-form/types/array.type';
+import { FormlyMatDatepickerModule } from '@ngx-formly/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { FormlyMaterialModule } from '@ngx-formly/material';
 import { UiFormModule } from './ui-form/ui-form.module';
 
@@ -18,6 +20,8 @@ import { UiFormModule } from './ui-form/ui-form.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FormlyMaterialModule,
+    FormlyMatDatepickerModule,
+    MatNativeDateModule,
     FormlyModule.forRoot({
     }),
     UiFormModule

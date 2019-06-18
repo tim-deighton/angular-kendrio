@@ -50,6 +50,10 @@ return     {
         'type': 'integer',
         'title': 'Age',
       },
+              "simpleDate": {
+            'title': 'a date value',
+            'type': 'datepicker',
+          },
       'bio': {
         'type': 'textarea',
         'title': 'Bio',

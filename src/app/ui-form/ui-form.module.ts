@@ -18,11 +18,12 @@ import { FormlyFieldInputMoney } from './types/money.component';
 
 import { config } from './config';
 import { FormlyMaterialModule } from '@ngx-formly/material';
+// import { MatNativeDateModule } from '@angular/material/core';
 // import { AppMaterialModule } from './app/app-material/app-material.module';
 import { FormlyFieldTypeahead } from './types/typeahead.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 // import { SharedModule } from '../shared.module';
-
+// import { FormlyMatDatepickerModule } from '@ngx-formly/material/datepicker';
 
 import {
   MatButtonToggleModule,
@@ -33,7 +34,8 @@ import {
   MatRadioModule,
   MatSelectModule,
   MatSliderModule,
-  MatButtonModule
+  MatButtonModule,
+  // MatNativeDateModule
 } from '@angular/material';
 
 
@@ -50,7 +52,6 @@ import {
     // SharedModule
     // FormlyBootstrapModule,
     FormlyMaterialModule,
-
     MatButtonToggleModule,
     MatButtonModule,
     MatCheckboxModule,
@@ -60,6 +61,8 @@ import {
     MatRadioModule,
     MatSelectModule,
     MatSliderModule,
+    // MatNativeDateModule,
+    // FormlyMatDatepickerModule
   ],
   exports: [
     FormsModule,
@@ -75,7 +78,9 @@ import {
     MatRadioModule,
     MatSelectModule,
     MatSliderModule,
-    NgSelectModule
+    NgSelectModule,
+    // MatNativeDateModule,
+    // FormlyMatDatepickerModule
   ],
   declarations: [
     PanelWrapperComponent,
