@@ -47,7 +47,7 @@ return     {
         'title': 'Age',
       },
       'bio': {
-        'type': 'string',
+        'type': 'textarea',
         'title': 'Bio',
       },
       'password': {
