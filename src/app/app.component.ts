@@ -19,88 +19,86 @@ export class AppComponent {
   options: FormlyFormOptions = {};
 
   fields: FormlyFieldConfig[] = [this.formlyJsonschema.toFieldConfig(
-this.getJSONSchema()
+    this.getJSONSchema()
   )];
-  constructor(private formlyJsonschema: FormlyJsonschema) {}
+  constructor(private formlyJsonschema: FormlyJsonschema) { }
 
-getJSONSchema() {
+  getJSONSchema() {
 
-return     {
-    'title': 'A registration form',
-    'description': 'A simple form example.',
-    'type': 'object',
-    'required': [
-      'firstName',
-      'lastName',
-    ],
-    'properties': {
+    return {
+      'title': 'A registration form',
+      'description': 'A simple form example.',
+      'type': 'object',
+      'required': [
+        'firstName',
+        'lastName',
+      ],
+      'properties': {
 
-            "captain1": {
-        "title": "Title",
-        "description": "Look we have a description",
-        "type": "string",
-        "enum": [ "El Stinko",
-                  "Bongo Doctor",
-                  "Witch Hunter General",
-                  "Where am I" ]
-      },
-      'firstName': {
-        'type': 'string',
-        'title': 'First name',
-      },
-      'lastName': {
-        'type': 'string',
-        'title': 'Last name',
-      },
-            'country': {
-        'type': 'typeahead',
-        'title': 'Country',
-           'items': {
-          'type': 'string',
-          'default': 'bazinga',
+        "captain1": {
+          "title": "Title",
+          "description": "Look we have a description",
+          "type": "string",
+          "enum": ["El Stinko",
+            "Bongo Doctor",
+            "Witch Hunter General",
+            "Where am I"]
         },
-      },
-      'age': {
-        'type': 'integer',
-        'title': 'Age',
-      },
-              "simpleDate": {
-            'title': 'a date value',
-            'type': 'datepicker',
+        'firstName': {
+          'type': 'string',
+          'title': 'First name',
+        },
+        'lastName': {
+          'type': 'string',
+          'title': 'Last name',
+        },
+        'country': {
+          'type': 'typeahead',
+          'title': 'Country',
+          'items': {
+            'type': 'string',
+            'default': 'bazinga',
           },
-      'bio': {
-        'type': 'textarea',
-        'title': 'Bio',
-      },
-      'password': {
-        'type': 'string',
-        'title': 'Password',
-        'minLength': 3,
-      },
-      'telephone': {
-        'type': 'radio',
-        'title': 'Telephone',
-      
+        },
+        'age': {
+          'type': 'integer',
+          'title': 'Age',
+        },
+        "simpleDate": {
+          'title': 'a date value',
+          'type': 'datepicker',
+        },
+        'bio': {
+          'type': 'textarea',
+          'title': 'Bio',
+        },
+        'password': {
+          'type': 'string',
+          'title': 'Password',
+          'minLength': 3,
+        },
+        'telephone': {
+          'type': 'radio',
+          'title': 'Telephone',
           'enum': [
             'foo',
             'bar',
             'fuzz',
             'qux',
           ],
-  
-      },
-            'pay': {
-        'type': 'money',
-        'title': 'Income',
-        'minLength': 10,
-      },
+        },
+        'pay': {
+          'type': 'money',
+          'title': 'Income',
+          'minLength': 10,
+        },
 
- 
-    },
+
+      },
+    }
+
+
   }
-
-
-}
 
 
   submit() {
