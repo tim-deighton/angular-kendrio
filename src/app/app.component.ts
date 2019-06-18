@@ -34,6 +34,16 @@ return     {
       'lastName',
     ],
     'properties': {
+
+            "captain1": {
+        "title": "Title",
+        "description": "Look we have a description",
+        "type": "string",
+        "enum": [ "El Stinko",
+                  "Bongo Doctor",
+                  "Witch Hunter General",
+                  "Where am I" ]
+      },
       'firstName': {
         'type': 'string',
         'title': 'First name',
