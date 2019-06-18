@@ -13,7 +13,7 @@ export class AppComponent {
     firstName: 'Chucky',
     lastName: 'Norris',
     age: 75,
-    bio: 'Roundhouse kicking asses since 1940',
+    bio: 'Roundhouse kicking  since 1940',
     password: 'noneed',
   };
   options: FormlyFormOptions = {};
