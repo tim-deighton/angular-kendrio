@@ -14,7 +14,7 @@ import { PanelWrapperComponent,
 
 // import { RepeatSectionComponent } from './types/repeat-section.component';
 import { FormlyFieldInputMoney } from './types/money.component';
-// import { FormlyFieldInputPercentage } from './types/percentage.component';
+import { FormlyFieldInputPercentage } from './types/percentage.component';
 
 import { config } from './config';
 import { FormlyMaterialModule } from '@ngx-formly/material';
@@ -88,7 +88,7 @@ import {
     // AnimationWrapperComponent,
     // RepeatSectionComponent,
     FormlyFieldInputMoney,
-    // FormlyFieldInputPercentage,
+    FormlyFieldInputPercentage,
     FormlyFieldTypeahead
 
   ]

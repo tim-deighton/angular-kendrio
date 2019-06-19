@@ -49,7 +49,7 @@ export const config: ConfigOption = {
       },
     },
         {
-      name: 'percentage', component: FormlyFieldInputMoney,
+      name: 'percentage', component: FormlyFieldInputPercentage,
       defaultOptions: {
         expressionProperties: {},
         defaultValue: 0,

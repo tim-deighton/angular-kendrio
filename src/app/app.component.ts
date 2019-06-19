@@ -10,7 +10,7 @@ import { FormlyJsonschema } from '@ngx-formly/core/json-schema';
 export class AppComponent {
   form = new FormGroup({});
   model: any = {
-    firstName: 'Chucky',
+    firstName: 'Yellow Lorry',
     lastName: 'Norris',
     age: 75,
     bio: 'Roundhouse kicking  since 1940',
@@ -31,30 +31,31 @@ export class AppComponent {
       'type': 'object',
       'required': [
         'firstName',
-        'lastName',
+        'isdn',
+        'claim'
       ],
       'properties': {
 
         "captain1": {
-          "title": "Title",
-          "description": "Look we have a description",
+          "title": "Artist",
+          "description": "Please select your Artist",
           "type": "string",
-          "enum": ["El Stinko",
-            "Bongo Doctor",
-            "Witch Hunter General",
-            "Where am I"]
+          "enum": ["David Boxie",
+            "The Clash",
+            "Sex Pistols",
+            "The Fall"]
         },
         'firstName': {
           'type': 'string',
-          'title': 'First name',
+          'title': 'Record Label',
         },
-        'lastName': {
+        'isdn': {
           'type': 'string',
-          'title': 'Last name',
+          'title': 'ISDN',
         },
         'country': {
           'type': 'typeahead',
-          'title': 'Country',
+          'title': 'Region',
           'items': {
             'type': 'string',
             'default': 'bazinga',
@@ -62,7 +63,7 @@ export class AppComponent {
         },
         'age': {
           'type': 'number',
-          'title': 'Age',
+          'title': 'View Count',
         },
         "simpleDate": {
           'title': 'Release Date',
@@ -91,6 +92,10 @@ export class AppComponent {
           'type': 'money',
           'title': 'Income',
           'minLength': 10,
+        },
+                'claim': {
+          'type': 'percentage',
+          'title': 'Claim Share',
         },
 
 
