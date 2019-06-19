@@ -15,7 +15,7 @@ import {
 } from './wrappers';
 // import { RepeatSectionComponent } from './types/repeat-section.component';
 import { FormlyFieldInputMoney } from './types/money.component';
-// import { FormlyFieldInputPercentage } from './types/percentage.component';
+import { FormlyFieldInputPercentage } from './types/percentage.component';
 import { ConfigOption } from '@ngx-formly/core';
 import { FormlyFieldTypeahead } from './types/typeahead.component';
 
@@ -44,7 +44,18 @@ export const config: ConfigOption = {
         defaultValue: 0,
         templateOptions: {
           placeholder: 'hello',
-          disabled: true,
+          disabled: false,
+        },
+      },
+    },
+        {
+      name: 'percentage', component: FormlyFieldInputMoney,
+      defaultOptions: {
+        expressionProperties: {},
+        defaultValue: 0,
+        templateOptions: {
+          placeholder: 'hello',
+          disabled: false,
         },
       },
     },

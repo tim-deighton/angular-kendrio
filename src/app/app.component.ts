@@ -61,11 +61,11 @@ export class AppComponent {
           },
         },
         'age': {
-          'type': 'integer',
+          'type': 'number',
           'title': 'Age',
         },
         "simpleDate": {
-          'title': 'a date value',
+          'title': 'Release Date',
           'type': 'datepicker',
         },
         'bio': {
@@ -79,12 +79,12 @@ export class AppComponent {
         },
         'telephone': {
           'type': 'radio',
-          'title': 'Telephone',
+          'title': 'Genre',
           'enum': [
-            'foo',
-            'bar',
-            'fuzz',
-            'qux',
+            'Punk',
+            'Reggea',
+            'Soul',
+            'Jazz',
           ],
         },
         'pay': {
