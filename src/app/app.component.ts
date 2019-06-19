@@ -92,6 +92,7 @@ export class AppComponent {
           'type': 'money',
           'title': 'Income',
           'minLength': 10,
+           "description": "(Less is more)",
         },
                 'claim': {
           'type': 'percentage',
