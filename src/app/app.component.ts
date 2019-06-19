@@ -13,7 +13,7 @@ export class AppComponent {
     firstName: 'Yellow Lorry',
     lastName: 'Norris',
     age: 75,
-    bio: 'Roundhouse kicking  since 1940',
+    bio: 'Born in the morning in the drizzlin rain. Trouble is his middle name',
     password: 'noneed',
   };
   options: FormlyFormOptions = {};

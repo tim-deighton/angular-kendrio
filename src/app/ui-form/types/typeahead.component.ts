@@ -11,7 +11,7 @@ import { takeUntil, startWith, filter, debounceTime, distinctUntilChanged, switc
     <label>{{to.label}}</label>
         <ng-select [items]="countries"
                    bindLabel="Name"
-                   placeholder="Select Country"
+                   [placeholder]="to.label"
                    [(ngModel)]="selectedCity">
                        <ng-template ng-option-tmp let-item="item" let-index="index">
     <img width="20"  src="https://flags.fmcdn.net/data/flags/h40/{{item.Code.toLowerCase()}}.png"/> 
