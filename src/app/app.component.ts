@@ -30,7 +30,7 @@ export class AppComponent {
 
     formlyConfig = this.formlyJsonschema.toFieldConfig(this.jsonSchema);
 
-  fields: FormlyFieldConfig[] = [this.uiMapper(this.formlyConfig)];
+  fields: FormlyFieldConfig[] = [this.uiMapper(this.formlyConfig, this.jsonSchema)];
   constructor(private formlyJsonschema: FormlyJsonschema) { }
 
   getJSONSchema() {
@@ -115,7 +115,7 @@ export class AppComponent {
 
 
   }
-    uiMapper(formlyConfig) {
+    uiMapper(formlyConfig, jsonSchema) {
     console.log(formlyConfig);
 
 // for (let index = this.jsonSchema.properties; index <= this.queNumMax; index++) {
@@ -124,9 +124,11 @@ export class AppComponent {
 //      }
 //   return items;
 
-Object.keys(this.jsonSchema.properties).forEach(function(key) {
+Object.keys(jsonSchema.properties).forEach(function(key) {
 
-  console.log(key, this.jsonSchema.properties[key]);
+  
+
+  console.log(key);
 
 });
 
