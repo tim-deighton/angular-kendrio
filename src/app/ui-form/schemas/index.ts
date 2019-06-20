@@ -17,3 +17,6 @@ export const FORMS_VALUES = (disabled = false, data?: any) => ({
   [YOUTUBE_FORM(data).id]: YOUTUBE_FORM(disabled, data).template,
 });
 
+  public getHelpText(): Observable<any> {
+    return this.http.get('assets/help-text/helpText' + this.config.locale + '.json');
+  }

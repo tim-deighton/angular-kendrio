@@ -7,6 +7,7 @@ import { FORMS_VALUES } from '../schemas';
 import { HttpClient } from '@angular/common/http';
 
 import { FULLNAME, EMAIL, TYPEAHEAD } from '../schemas/form-elements';
+import { Observable, from } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,12 @@ export class FormlyService {
     return LOGIN_FORM().template;
   }
 
-  public getFormById(id: string, disabled = false, data?: object) {
+    public getSchema(formID): Observable<any> {
 
+    return this.http.get('../schemas' + formID + '.json');
+  }
+
+  public getFormById(id: string, disabled = false, data?: object) {
     const ob = FORMS_VALUES(disabled, data)[id];
     console.log(ob)
     return ob;

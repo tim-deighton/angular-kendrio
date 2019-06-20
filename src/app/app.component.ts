@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyJsonschema } from '@ngx-formly/core/json-schema';
+import {FormlyService} from './ui-form/services/formly.service'
 
 @Component({
   selector: 'formly-app-example',
@@ -40,9 +41,11 @@ export class AppComponent {
   formlyConfig = this.formlyJsonschema.toFieldConfig(this.jsonSchema);
 
   fields: FormlyFieldConfig[] = [this.uiMapper(this.formlyConfig, this.jsonSchema, this.uiSchema)];
-  constructor(private formlyJsonschema: FormlyJsonschema) { }
+  constructor(private formlyJsonschema: FormlyJsonschema,
+  formService: FormlyService) { }
 
   getJSONSchema() {
+
 
     return {
       'title': 'A registration form',
