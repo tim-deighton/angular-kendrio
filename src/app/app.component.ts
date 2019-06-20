@@ -51,91 +51,91 @@ export class AppComponent {
   }
 
   getJSONSchema() {
- this.jsonSchema = {
-	"title": "A registration form",
-	"description": "A simple form example.",
-	"type": "object",
-	"required": [
-		"firstName",
-		"isdn",
-		"claim"
-	],
-	"properties": {
+//  this.jsonSchema = {
+// 	"title": "A registration form",
+// 	"description": "A simple form example.",
+// 	"type": "object",
+// 	"required": [
+// 		"firstName",
+// 		"isdn",
+// 		"claim"
+// 	],
+// 	"properties": {
 
-		"artist": {
-			"title": "Artist",
-			"description": "Please select your Artist",
-			"type": "string",
-			"enum": ["David Boxie",
-				"The Clash",
-				"Sex Pistols",
-				"The Fall"
-			]
-		},
-		"firstName": {
-			"type": "string",
-			"title": "Record Label"
-		},
-		"isdn": {
-			"type": "string",
-			"title": "ISDN"
-		},
-		"country": {
-			"type": "typeahead",
-			"title": "Region",
-			"items": {
-				"type": "string",
-				"default": "bazinga"
-			}
-		},
-		"age": {
-			"type": "number",
-			"title": "View Count"
-		},
-		"simpleDate": {
-			"title": "Release Date",
-			"type": "datepicker"
-		},
-		"bio": {
-			"type": "textarea",
-			"title": "Bio"
-		},
-		"password": {
-			"type": "string",
-			"title": "Password",
-			"minLength": 3
-		},
-		"telephone": {
-			"type": "radio",
-			"title": "Genre",
-			"enum": [
-				"Punk",
-				"Reggea",
-				"Soul",
-				"Jazz"
-			]
-		},
-		"pay": {
-			"type": "money",
-			"title": "Income",
-			"minLength": 10,
-			"description": "(Less is more)"
-		},
-		"claim": {
-			"type": "percentage",
-			"title": "Claim Share"
-		}
+// 		"artist": {
+// 			"title": "Artist",
+// 			"description": "Please select your Artist",
+// 			"type": "string",
+// 			"enum": ["David Boxie",
+// 				"The Clash",
+// 				"Sex Pistols",
+// 				"The Fall"
+// 			]
+// 		},
+// 		"firstName": {
+// 			"type": "string",
+// 			"title": "Record Label"
+// 		},
+// 		"isdn": {
+// 			"type": "string",
+// 			"title": "ISDN"
+// 		},
+// 		"country": {
+// 			"type": "typeahead",
+// 			"title": "Region",
+// 			"items": {
+// 				"type": "string",
+// 				"default": "bazinga"
+// 			}
+// 		},
+// 		"age": {
+// 			"type": "number",
+// 			"title": "View Count"
+// 		},
+// 		"simpleDate": {
+// 			"title": "Release Date",
+// 			"type": "datepicker"
+// 		},
+// 		"bio": {
+// 			"type": "textarea",
+// 			"title": "Bio"
+// 		},
+// 		"password": {
+// 			"type": "string",
+// 			"title": "Password",
+// 			"minLength": 3
+// 		},
+// 		"telephone": {
+// 			"type": "radio",
+// 			"title": "Genre",
+// 			"enum": [
+// 				"Punk",
+// 				"Reggea",
+// 				"Soul",
+// 				"Jazz"
+// 			]
+// 		},
+// 		"pay": {
+// 			"type": "money",
+// 			"title": "Income",
+// 			"minLength": 10,
+// 			"description": "(Less is more)"
+// 		},
+// 		"claim": {
+// 			"type": "percentage",
+// 			"title": "Claim Share"
+// 		}
 
 
-	}
-}
+// 	}
+// }
 
     this.formlyService.getSchema('youtube')
       .subscribe(newValue => {
 
-        this.jsonSchema = newValue;
-          this.formlyConfig = this.formlyJsonschema.toFieldConfig(this.jsonSchema);
-          this.fields = [this.uiMapper(this.formlyConfig, this.jsonSchema, this.uiSchema)];
+        // this.jsonSchema = newValue;
+          this.formlyConfig = this.formlyJsonschema.toFieldConfig(newValue);
+          this.fields = [this.uiMapper(this.formlyConfig, newValue, this.uiSchema)];
 
       });
 
