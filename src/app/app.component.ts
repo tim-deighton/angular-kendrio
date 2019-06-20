@@ -138,6 +138,7 @@ export class AppComponent {
       });
       i++
     })
+    console.log(formlyConfig);
     return formlyConfig;
   }
 
