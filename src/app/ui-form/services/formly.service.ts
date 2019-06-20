@@ -15,67 +15,67 @@ import { Observable, from } from 'rxjs';
 export class FormlyService {
   constructor(private http: HttpClient) { }
 
-  public getDefaultForm(): FormlyFieldConfig[] {
-    return LOGIN_FORM().template;
+  // public getDefaultForm(): FormlyFieldConfig[] {
+  //   return LOGIN_FORM().template;
+  // }
+
+    public getSchema(formID: string): Observable<any> {
+      // alert(JSON.stringify('../assets/youtube.json'))
+   return this.http.get('assets/youtube.json');
   }
 
-    public getSchema(formID): Observable<any> {
+  // public getFormById(id: string, disabled = false, data?: object) {
+  //   const ob = FORMS_VALUES(disabled, data)[id];
+  //   console.log(ob)
+  //   return ob;
+  // }
 
-    return this.http.get('../schemas' + formID + '.json');
-  }
+  // public getJSONFormById(id: string, disabled = false, data: any = {}) {
+  //   const frm = this.generateCleanJsonConfiguration(FORMS_VALUES(disabled, data)[id]);
+  //   return  frm;
+  // }
 
-  public getFormById(id: string, disabled = false, data?: object) {
-    const ob = FORMS_VALUES(disabled, data)[id];
-    console.log(ob)
-    return ob;
-  }
+  // private generateCleanJsonConfiguration(clone: object[]) {  // use this to create JSON config ??? maybe??
+  //   return JSON.parse(JSON.stringify(clone));
+  // }
 
-  public getJSONFormById(id: string, disabled = false, data: any = {}) {
-    const frm = this.generateCleanJsonConfiguration(FORMS_VALUES(disabled, data)[id]);
-    return  frm;
-  }
+  // getYoutubeData() {
+  //   return this.http.get<FormlyFieldConfig[]>('assets/fake-data/you-tube-api.json');
+  // }
 
-  private generateCleanJsonConfiguration(clone: object[]) {  // use this to create JSON config ??? maybe??
-    return JSON.parse(JSON.stringify(clone));
-  }
+  // getYoutubeFields() {
 
-  getYoutubeData() {
-    return this.http.get<FormlyFieldConfig[]>('assets/fake-data/you-tube-api.json');
-  }
+  //   const mappedFields = [
+  //     { 'field': 'FULLNAME', 'enabled': false },
+  //     { 'field': 'EMAIL', 'enabled': false },
+  //   ];
 
-  getYoutubeFields() {
+  //   const myFields = [
+  //     // FULLNAME(false, data['fullname']),
+  //     // EMAIL(false, data['email']),
+  //   ];
 
-    const mappedFields = [
-      { 'field': 'FULLNAME', 'enabled': false },
-      { 'field': 'EMAIL', 'enabled': false },
-    ];
-
-    const myFields = [
-      // FULLNAME(false, data['fullname']),
-      // EMAIL(false, data['email']),
-    ];
-
-    mappedFields.forEach(v => {
-      const fname = v.field;
+  //   mappedFields.forEach(v => {
+  //     const fname = v.field;
 
 
-      //  myFields.push(
+  //     //  myFields.push(
 
-          console.log(v[fname](false, {
-            'id': 'YOUTUBE',
-            'fullname': 'Bernie Winters',
-            'email': 'bernie@heaven.com'
-        }));
+  //         console.log(v[fname](false, {
+  //           'id': 'YOUTUBE',
+  //           'fullname': 'Bernie Winters',
+  //           'email': 'bernie@heaven.com'
+  //       }));
 
-        //  [fname](false, data['fullname'])
-
-
-     //   );
+  //       //  [fname](false, data['fullname'])
 
 
-    });
+  //    //   );
 
-  }
+
+  //   });
+
+  // }
 
 
 

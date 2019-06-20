@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http'; 
 import { FormlyModule } from '@ngx-formly/core';
 // import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { UiFormModule } from './ui-form/ui-form.module';
     BrowserModule,
     // TextMaskModule,
     ReactiveFormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FormlyMaterialModule,
     FormlyMatDatepickerModule,
