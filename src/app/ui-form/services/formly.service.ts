@@ -15,7 +15,6 @@ import { Observable, from, forkJoin } from 'rxjs';
 export class FormlyService {
   constructor(private http: HttpClient) { }
 
-
     getFormData(formId): Observable<any> {
     return forkJoin([this.getUI(formId), this.getSchema(formId)]);
   }
@@ -25,7 +24,6 @@ export class FormlyService {
   }
 
   getSchema(formId: string): Observable<any> {
-      // alert(JSON.stringify('../assets/youtube.json'))
    return this.http.get<FormlyFieldConfig[]>('assets/youtube.json');
   }
 
