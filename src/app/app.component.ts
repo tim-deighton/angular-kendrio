@@ -17,12 +17,12 @@ export class AppComponent {
     password: 'noneed',
   };
   options: FormlyFormOptions = {};
-   jsonSchema = this.getJSONSchema()
-    uiSchema = {
+  jsonSchema = this.getJSONSchema()
+  uiSchema = {
     "artist": {
-      "ui:disabled": true
+      "ui:disabled": false
     },
-        "firstName": {
+    "firstName": {
       "ui:disabled": true
     }
   };
@@ -31,7 +31,7 @@ export class AppComponent {
   //   this.getJSONSchema()
   // )];
 
-    formlyConfig = this.formlyJsonschema.toFieldConfig(this.jsonSchema);
+  formlyConfig = this.formlyJsonschema.toFieldConfig(this.jsonSchema);
 
   fields: FormlyFieldConfig[] = [this.uiMapper(this.formlyConfig, this.jsonSchema, this.uiSchema)];
   constructor(private formlyJsonschema: FormlyJsonschema) { }
@@ -105,9 +105,9 @@ export class AppComponent {
           'type': 'money',
           'title': 'Income',
           'minLength': 10,
-           "description": "(Less is more)",
+          "description": "(Less is more)",
         },
-                'claim': {
+        'claim': {
           'type': 'percentage',
           'title': 'Claim Share',
         },
@@ -118,35 +118,31 @@ export class AppComponent {
 
 
   }
-    uiMapper(formlyConfig, jsonSchema, uiSchema) {
+  uiMapper(formlyConfig, jsonSchema, uiSchema) {
     console.log(formlyConfig);
+    let i = 0
+    Object.keys(jsonSchema.properties).forEach(function (key) {
+      console.log(key, jsonSchema.properties[key]);
+      Object.keys(uiSchema).forEach(function (uiKey) {
+        if (uiKey === key) {
+          console.log('match: ' + uiSchema[key]['ui:disabled']);
+          formlyConfig['fieldGroup'][i]['templateOptions']['disabled'] = uiSchema[key]['ui:disabled'];
+        }
+      });
+      i++
+    })
 
-
-Object.keys(jsonSchema.properties).forEach(function(key) {
-
-  console.log(key, jsonSchema.properties[key]);
-
-Object.keys(uiSchema).forEach(function(uiKey) {
-if (uiKey === key) {
-console.log('match' + uiKey)
-}
- 
-});
-
-
-})
-
-  //   this.jsonSchema.properties.forEach((item, index) => {
-  //   for (let field of this.jsonSchema.properties) {
-  //  console.log( field);
-  //     }
+    //   this.jsonSchema.properties.forEach((item, index) => {
+    //   for (let field of this.jsonSchema.properties) {
+    //  console.log( field);
+    //     }
 
 
     // Make changes to the formlyConfig based on the configuration from this.uiSchema
     // formlyConfig
     // ['fieldGroup'][0]['templateOptions']['disabled'] = true;
-      //  ['fieldGroup'][2]['templateOptions']['disabled'] = true;
-//  console.log(formlyConfig);
+    //  ['fieldGroup'][2]['templateOptions']['disabled'] = true;
+    //  console.log(formlyConfig);
     return formlyConfig;
   }
 
