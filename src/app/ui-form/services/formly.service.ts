@@ -21,7 +21,7 @@ export class FormlyService {
   }
 
   getUI(formId: String) {
-    return this.http.get('assets/you-tube-ui.json');
+    return this.http.get('assets/youtube-ui.json');
   }
 
   getSchema(formId: string): Observable<any> {
