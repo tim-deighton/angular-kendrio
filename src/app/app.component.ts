@@ -17,10 +17,20 @@ export class AppComponent {
     password: 'noneed',
   };
   options: FormlyFormOptions = {};
+   jsonSchema = this.getJSONSchema()
+    uiSchema = {
+    "lastName": {
+      "ui:disabled": true
+    }
+  };
 
-  fields: FormlyFieldConfig[] = [this.formlyJsonschema.toFieldConfig(
-    this.getJSONSchema()
-  )];
+  // fields: FormlyFieldConfig[] = [this.formlyJsonschema.toFieldConfig(
+  //   this.getJSONSchema()
+  // )];
+
+    formlyConfig = this.formlyJsonschema.toFieldConfig(this.jsonSchema);
+
+  fields: FormlyFieldConfig[] = [this.uiMapper(this.formlyConfig)];
   constructor(private formlyJsonschema: FormlyJsonschema) { }
 
   getJSONSchema() {
@@ -104,6 +114,34 @@ export class AppComponent {
     }
 
 
+  }
+    uiMapper(formlyConfig) {
+    console.log(formlyConfig);
+
+// for (let index = this.jsonSchema.properties; index <= this.queNumMax; index++) {
+//          this.result = index
+//          console.log( this.result);
+//      }
+//   return items;
+
+Object.keys(this.jsonSchema.properties).forEach(function(key) {
+
+  console.log(key, this.jsonSchema.properties[key]);
+
+});
+
+  //   this.jsonSchema.properties.forEach((item, index) => {
+  //   for (let field of this.jsonSchema.properties) {
+  //  console.log( field);
+  //     }
+
+
+    // Make changes to the formlyConfig based on the configuration from this.uiSchema
+    // formlyConfig
+    // ['fieldGroup'][0]['templateOptions']['disabled'] = true;
+      //  ['fieldGroup'][2]['templateOptions']['disabled'] = true;
+//  console.log(formlyConfig);
+    return formlyConfig;
   }
 
 
