@@ -20,10 +20,16 @@ export class AppComponent {
   jsonSchema = this.getJSONSchema()
   uiSchema = {
     "artist": {
-      "ui:disabled": false
+      "ui:disabled": false,
+       "ui:placeholder": 'Enter the Artist'
     },
     "firstName": {
-      "ui:disabled": true
+      "ui:disabled": true,
+       "ui:placeholder": 'Enter your First Name'
+    }
+    ,
+    "isdn": {
+       "ui:placeholder": 'Enter your ISDN'
     }
   };
 
@@ -127,22 +133,11 @@ export class AppComponent {
         if (uiKey === key) {
           console.log('match: ' + uiSchema[key]['ui:disabled']);
           formlyConfig['fieldGroup'][i]['templateOptions']['disabled'] = uiSchema[key]['ui:disabled'];
+            formlyConfig['fieldGroup'][i]['templateOptions']['placeholder'] = uiSchema[key]['ui:placeholder'];
         }
       });
       i++
     })
-
-    //   this.jsonSchema.properties.forEach((item, index) => {
-    //   for (let field of this.jsonSchema.properties) {
-    //  console.log( field);
-    //     }
-
-
-    // Make changes to the formlyConfig based on the configuration from this.uiSchema
-    // formlyConfig
-    // ['fieldGroup'][0]['templateOptions']['disabled'] = true;
-    //  ['fieldGroup'][2]['templateOptions']['disabled'] = true;
-    //  console.log(formlyConfig);
     return formlyConfig;
   }
 
