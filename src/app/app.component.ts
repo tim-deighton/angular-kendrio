@@ -19,7 +19,10 @@ export class AppComponent {
   options: FormlyFormOptions = {};
    jsonSchema = this.getJSONSchema()
     uiSchema = {
-    "lastName": {
+    "artist": {
+      "ui:disabled": true
+    },
+        "firstName": {
       "ui:disabled": true
     }
   };
@@ -30,7 +33,7 @@ export class AppComponent {
 
     formlyConfig = this.formlyJsonschema.toFieldConfig(this.jsonSchema);
 
-  fields: FormlyFieldConfig[] = [this.uiMapper(this.formlyConfig, this.jsonSchema)];
+  fields: FormlyFieldConfig[] = [this.uiMapper(this.formlyConfig, this.jsonSchema, this.uiSchema)];
   constructor(private formlyJsonschema: FormlyJsonschema) { }
 
   getJSONSchema() {
@@ -46,7 +49,7 @@ export class AppComponent {
       ],
       'properties': {
 
-        "captain1": {
+        "artist": {
           "title": "Artist",
           "description": "Please select your Artist",
           "type": "string",
@@ -115,22 +118,23 @@ export class AppComponent {
 
 
   }
-    uiMapper(formlyConfig, jsonSchema) {
+    uiMapper(formlyConfig, jsonSchema, uiSchema) {
     console.log(formlyConfig);
 
-// for (let index = this.jsonSchema.properties; index <= this.queNumMax; index++) {
-//          this.result = index
-//          console.log( this.result);
-//      }
-//   return items;
 
 Object.keys(jsonSchema.properties).forEach(function(key) {
 
-  
+  console.log(key, jsonSchema.properties[key]);
 
-  console.log(key);
-
+Object.keys(uiSchema).forEach(function(uiKey) {
+if (uiKey === key) {
+console.log('match' + uiKey)
+}
+ 
 });
+
+
+})
 
   //   this.jsonSchema.properties.forEach((item, index) => {
   //   for (let field of this.jsonSchema.properties) {
