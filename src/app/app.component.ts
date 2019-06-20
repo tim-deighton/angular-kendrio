@@ -21,15 +21,8 @@ export class AppComponent {
   options: FormlyFormOptions = {};
   jsonSchema: any;
   uiSchema: any;
-
-  // fields: FormlyFieldConfig[] = [this.formlyJsonschema.toFieldConfig(
-  //   this.getJSONSchema()
-  // )];
-
-
-
   fields: FormlyFieldConfig[]
-  //  = [this.uiMapper(this.formlyConfig, this.jsonSchema, this.uiSchema)];
+
   constructor(
     private formlyJsonschema: FormlyJsonschema,
     private formlyService: FormlyService
