@@ -7,7 +7,7 @@ import { FORMS_VALUES } from '../schemas';
 import { HttpClient } from '@angular/common/http';
 
 import { FULLNAME, EMAIL, TYPEAHEAD } from '../schemas/form-elements';
-import { Observable, from } from 'rxjs';
+import { Observable, from, forkJoin } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +15,18 @@ import { Observable, from } from 'rxjs';
 export class FormlyService {
   constructor(private http: HttpClient) { }
 
-  // public getDefaultForm(): FormlyFieldConfig[] {
-  //   return LOGIN_FORM().template;
-  // }
 
-    public getSchema(formID: string): Observable<any> {
+    getFormData(formId): Observable<any> {
+    return forkJoin([this.getUI(formId), this.getSchema(formId)]);
+  }
+
+  getUI(formId: String) {
+    return this.http.get<{ firstName: string, lastName: string }>('assets/you-tube-ui.json');
+  }
+
+  getSchema(formId: string): Observable<any> {
       // alert(JSON.stringify('../assets/youtube.json'))
-   return this.http.get('assets/youtube.json');
+   return this.http.get<FormlyFieldConfig[]>('assets/youtube.json');
   }
 
   // public getFormById(id: string, disabled = false, data?: object) {

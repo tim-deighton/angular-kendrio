@@ -20,20 +20,7 @@ export class AppComponent {
   formlyConfig: any;
   options: FormlyFormOptions = {};
   jsonSchema: any;
-  uiSchema = {
-    "artist": {
-      "ui:disabled": false,
-      "ui:placeholder": 'Enter the Artist'
-    },
-    "firstName": {
-      "ui:disabled": true,
-      "ui:placeholder": 'Enter your First Name'
-    }
-    ,
-    "isdn": {
-      "ui:placeholder": 'Enter your ISDN'
-    }
-  };
+  uiSchema: any;
 
   // fields: FormlyFieldConfig[] = [this.formlyJsonschema.toFieldConfig(
   //   this.getJSONSchema()
@@ -51,100 +38,12 @@ export class AppComponent {
   }
 
   getJSONSchema() {
-//  this.jsonSchema = {
-// 	"title": "A registration form",
-// 	"description": "A simple form example.",
-// 	"type": "object",
-// 	"required": [
-// 		"firstName",
-// 		"isdn",
-// 		"claim"
-// 	],
-// 	"properties": {
 
-// 		"artist": {
-// 			"title": "Artist",
-// 			"description": "Please select your Artist",
-// 			"type": "string",
-// 			"enum": ["David Boxie",
-// 				"The Clash",
-// 				"Sex Pistols",
-// 				"The Fall"
-// 			]
-// 		},
-// 		"firstName": {
-// 			"type": "string",
-// 			"title": "Record Label"
-// 		},
-// 		"isdn": {
-// 			"type": "string",
-// 			"title": "ISDN"
-// 		},
-// 		"country": {
-// 			"type": "typeahead",
-// 			"title": "Region",
-// 			"items": {
-// 				"type": "string",
-// 				"default": "bazinga"
-// 			}
-// 		},
-// 		"age": {
-// 			"type": "number",
-// 			"title": "View Count"
-// 		},
-// 		"simpleDate": {
-// 			"title": "Release Date",
-// 			"type": "datepicker"
-// 		},
-// 		"bio": {
-// 			"type": "textarea",
-// 			"title": "Bio"
-// 		},
-// 		"password": {
-// 			"type": "string",
-// 			"title": "Password",
-// 			"minLength": 3
-// 		},
-// 		"telephone": {
-// 			"type": "radio",
-// 			"title": "Genre",
-// 			"enum": [
-// 				"Punk",
-// 				"Reggea",
-// 				"Soul",
-// 				"Jazz"
-// 			]
-// 		},
-// 		"pay": {
-// 			"type": "money",
-// 			"title": "Income",
-// 			"minLength": 10,
-// 			"description": "(Less is more)"
-// 		},
-// 		"claim": {
-// 			"type": "percentage",
-// 			"title": "Claim Share"
-// 		}
-
-
-// 	}
-// }
-
-    this.formlyService.getSchema('youtube')
-      .subscribe(newValue => {
-
-        // this.jsonSchema = newValue;
-          this.formlyConfig = this.formlyJsonschema.toFieldConfig(newValue);
-          this.fields = [this.uiMapper(this.formlyConfig, newValue, this.uiSchema)];
-
+    this.formlyService.getFormData('youtube')
+      .subscribe(([uiSchema, jsonSchema]) => {
+          this.formlyConfig = this.formlyJsonschema.toFieldConfig(jsonSchema);
+          this.fields = [this.uiMapper(this.formlyConfig, jsonSchema, uiSchema)];
       });
-
-
-    // this.formService.getSchema('youtube')
-    //   .subscribe((res: any) => {
-    //     return res;
-    //   });
-
   }
 
   uiMapper(formlyConfig, jsonSchema, uiSchema) {
