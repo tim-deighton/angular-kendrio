@@ -24,7 +24,7 @@ export class KendraioFormService {
   }
 
   getSchema(formId: string): Observable<any> {
-   return this.http.get<FormlyFieldConfig[]>('assets/youtube.json');
+   return this.http.get<FormlyFieldConfig[]>('assets/youtube-edit-vdeo-basic.json');
   }
 
 
