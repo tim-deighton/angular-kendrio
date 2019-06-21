@@ -14,7 +14,7 @@ export class AppComponent {
     title: 'The Forest',
     lastName: 'Norris',
     description: 'Born in the morning in the drizzlin rain. Trouble is his middle name',
-    videoUrl: ''
+    videoUrl: 'https://www.youtube.com/embed/YA9N4nsAxZo'
   };
   formConfig: any;
   options: FormlyFormOptions = {};
