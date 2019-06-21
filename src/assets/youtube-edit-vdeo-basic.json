@@ -1,23 +1,18 @@
 {
-	"title": "A registration form",
-	"description": "A simple form example.",
+	"title": "Edit Video",
+	"description": "This form allows you to edit your video",
 	"type": "object",
 	"required": [
-		"firstName",
-		"isdn",
-		"claim"
+		"title"
 	],
 	"properties": {
 
 		"title": {
-			"title": "Artist",
-			"description": "Please select your Artist",
+			"title": "Title",
+			"description": "",
 			"type": "string",
-			"enum": ["David Boxie",
-				"The Clash",
-				"Sex Pistols",
-				"The Fall"
-			]
+       "minLength": 2,
+        "maxLength": 100 
 		},
 
 
@@ -32,9 +27,22 @@
 
 		"description": {
 			"type": "textarea",
-			"title": "Bio"
+			"title": "Bio",
+       "minLength": 2,
+        "maxLength": 5000 
 		},
 
+
+		"visibility": {
+			"title": "Artist",
+			"description": "Please select your Artist",
+			"type": "string",
+			"enum": [
+        "Public",
+				"Private",
+				"Unlisted"
+			]
+		}
 
 
 
