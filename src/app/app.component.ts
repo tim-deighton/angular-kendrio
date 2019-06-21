@@ -35,28 +35,9 @@ export class AppComponent {
     this.formlyService.getFormData('youtube')
       .subscribe(([uiSchema, jsonSchema]) => {
           this.formlyConfig = this.formlyJsonschema.toFieldConfig(jsonSchema);
-          this.fields = [this.uiMapper(this.formlyConfig, jsonSchema, uiSchema)];
+          this.fields = [this.formlyService.uiMapper(this.formlyConfig, jsonSchema, uiSchema)];
       });
   }
-
-  uiMapper(formlyConfig, jsonSchema, uiSchema) {
-    console.log(formlyConfig);
-    let i = 0
-    Object.keys(jsonSchema.properties).forEach(function (key) {
-      console.log(key, jsonSchema.properties[key]);
-      Object.keys(uiSchema).forEach(function (uiKey) {
-        if (uiKey === key) {
-          console.log('match: ' + uiSchema[key]['ui:disabled']);
-          formlyConfig['fieldGroup'][i]['templateOptions']['disabled'] = uiSchema[key]['ui:disabled'];
-          formlyConfig['fieldGroup'][i]['templateOptions']['placeholder'] = uiSchema[key]['ui:placeholder'];
-        }
-      });
-      i++
-    })
-    console.log(formlyConfig);
-    return formlyConfig;
-  }
-
 
   submit() {
     alert(JSON.stringify(this.model));

@@ -27,6 +27,23 @@ export class FormlyService {
    return this.http.get<FormlyFieldConfig[]>('assets/youtube.json');
   }
 
+
+  uiMapper(formlyConfig, jsonSchema, uiSchema) {
+let i = 0
+    Object.keys(jsonSchema.properties).forEach(function (key) {
+      console.log(key, jsonSchema.properties[key]);
+      Object.keys(uiSchema).forEach(function (uiKey) {
+        if (uiKey === key) {
+          console.log('match: ' + uiSchema[key]['ui:disabled']);
+          formlyConfig['fieldGroup'][i]['templateOptions']['disabled'] = uiSchema[key]['ui:disabled'];
+          formlyConfig['fieldGroup'][i]['templateOptions']['placeholder'] = uiSchema[key]['ui:placeholder'];
+        }
+      });
+      i++
+    })
+    return formlyConfig;
+  }
+
   // public getFormById(id: string, disabled = false, data?: object) {
   //   const ob = FORMS_VALUES(disabled, data)[id];
   //   console.log(ob)
