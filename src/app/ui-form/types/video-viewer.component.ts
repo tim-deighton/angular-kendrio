@@ -8,11 +8,12 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser
   template: `
 
  
-     <mat-label>  {{ to.label }} </mat-label>
+ xxx{{ to | json }}xxx
+
+
 
 <iframe class="e2e-iframe-trusted-src" width="640" height="390" [src]="videoUrl"></iframe>
-     <mat-error>OOPS</mat-error>
-     <mat-hint></mat-hint>
+    <input  type="text"  [textMask]="{mask: numberMask}" [formControl]="formControl" [formlyAttributes]="field">
 
 
  `,

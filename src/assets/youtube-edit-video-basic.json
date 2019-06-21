@@ -10,9 +10,7 @@
     		"videoUrl": {
 			"title": "Video URL",
 			"description": "",
-			"type": "videoviewer",
-			"minLength": 2,
-			"maxLength": 100
+			"type": "videoviewer"
 		},
 		"title": {
 			"title": "Title",
