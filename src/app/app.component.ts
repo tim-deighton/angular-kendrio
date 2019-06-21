@@ -17,7 +17,7 @@ export class AppComponent {
     bio: 'Born in the morning in the drizzlin rain. Trouble is his middle name',
     password: 'noneed',
   };
-  formlyConfig: any;
+  formConfig: any;
   options: FormlyFormOptions = {};
   jsonSchema: any;
   uiSchema: any;
@@ -33,8 +33,8 @@ export class AppComponent {
   getJSONSchema() {
     this.formService.getFormData('youtube')
       .subscribe(([uiSchema, jsonSchema]) => {
-          this.formlyConfig = this.formlyJsonschema.toFieldConfig(jsonSchema);
-          this.fields = [this.formService.uiMapper(this.formlyConfig, jsonSchema, uiSchema)];
+          this.formConfig = this.formlyJsonschema.toFieldConfig(jsonSchema);
+          this.fields = [this.formService.uiMapper(this.formConfig, jsonSchema, uiSchema)];
       });
   }
 
