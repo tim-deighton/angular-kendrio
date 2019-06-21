@@ -8,7 +8,9 @@ import { FieldType } from '@ngx-formly/core';
 
  
      <mat-label>  {{ to.label }} </mat-label>
-<iframe width="560" height="315" src="{{ to.label }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+     <div  [innerHTML]="innerHTML">
+     </div>
+
      <mat-error>OOPS</mat-error>
      <mat-hint></mat-hint>
 
@@ -17,6 +19,8 @@ import { FieldType } from '@ngx-formly/core';
 })
 // tslint:disable-next-line: component-class-suffix
 export class FormlyFieldVideoViewer extends FieldType {
+
+  innerHTML: string = "<iframe width='560' height='315' src='{{ to.label }}' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
 }
 
 

@@ -38,9 +38,6 @@ export class AppComponent {
       });
   }
 
-
-
-
   submit() {
     alert(JSON.stringify(this.model));
   }
