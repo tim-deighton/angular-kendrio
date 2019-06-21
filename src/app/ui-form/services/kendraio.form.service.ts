@@ -12,7 +12,7 @@ import { Observable, from, forkJoin } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class FormlyService {
+export class KendraioFormService {
   constructor(private http: HttpClient) { }
 
     getFormData(formId): Observable<any> {

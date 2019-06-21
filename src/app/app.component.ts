@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyJsonschema } from '@ngx-formly/core/json-schema';
-import { FormlyService } from './ui-form/services/formly.service'
+import { KendraioFormService } from './ui-form/services/kendraio.form.service'
 
 @Component({
   selector: 'formly-app-example',
@@ -25,17 +25,17 @@ export class AppComponent {
 
   constructor(
     private formlyJsonschema: FormlyJsonschema,
-    private formlyService: FormlyService
+    private formService: KendraioFormService
   ) {  
     this.getJSONSchema() 
   }
 
   getJSONSchema() {
 
-    this.formlyService.getFormData('youtube')
+    this.formService.getFormData('youtube')
       .subscribe(([uiSchema, jsonSchema]) => {
           this.formlyConfig = this.formlyJsonschema.toFieldConfig(jsonSchema);
-          this.fields = [this.formlyService.uiMapper(this.formlyConfig, jsonSchema, uiSchema)];
+          this.fields = [this.formService.uiMapper(this.formlyConfig, jsonSchema, uiSchema)];
       });
   }
 
