@@ -12,11 +12,10 @@ export class AppComponent {
   form = new FormGroup({});
   model: any = {
     title: 'The Forest',
-    lastName: 'Norris',
     description: 'Born in the morning in the drizzlin rain. Trouble is his middle name',
     videoId: 'YA9N4nsAxZo'
   };
-  
+
   formConfig: any;
   options: FormlyFormOptions = {};
   jsonSchema: any;
