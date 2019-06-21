@@ -7,10 +7,17 @@
 	],
 
 	"properties": {
+    		"videoUrl": {
+			"title": "Title",
+			"description": "",
+			"type": "videoviewer",
+			"minLength": 2,
+			"maxLength": 100
+		},
 		"title": {
 			"title": "Title",
 			"description": "",
-			"type": "money",
+			"type": "string",
 			"minLength": 2,
 			"maxLength": 100
 		},
