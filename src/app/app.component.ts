@@ -31,13 +31,13 @@ export class AppComponent {
   }
 
   getJSONSchema() {
-
     this.formService.getFormData('youtube')
       .subscribe(([uiSchema, jsonSchema]) => {
           this.formlyConfig = this.formlyJsonschema.toFieldConfig(jsonSchema);
           this.fields = [this.formService.uiMapper(this.formlyConfig, jsonSchema, uiSchema)];
       });
   }
+
 
   submit() {
     alert(JSON.stringify(this.model));
