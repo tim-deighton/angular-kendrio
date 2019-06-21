@@ -23,3 +23,4 @@ export class FormlyFieldInputMoney extends FieldType {
     allowDecimal: true
   });
 }
+

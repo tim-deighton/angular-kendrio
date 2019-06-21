@@ -14,10 +14,11 @@ import {
   // AnimationWrapperComponent, ErrorWrapperComponent 
 } from './wrappers';
 // import { RepeatSectionComponent } from './types/repeat-section.component';
-import { FormlyFieldInputMoney } from './types/money.component';
+// import { FormlyFieldInputMoney } from './types/money.component';
 import { FormlyFieldInputPercentage } from './types/percentage.component';
 import { ConfigOption } from '@ngx-formly/core';
 import { FormlyFieldTypeahead } from './types/typeahead.component';
+import { FormlyFieldVideoViewer, FormlyFieldInputMoney } from './types';
 
 export const config: ConfigOption = {
   validationMessages: [
@@ -37,6 +38,8 @@ export const config: ConfigOption = {
   ],
   types: [
     // { name: 'repeat', component: RepeatSectionComponent },
+        {
+      name: 'videoviewer', component: FormlyFieldVideoViewer },
     {
       name: 'money', component: FormlyFieldInputMoney,
       defaultOptions: {

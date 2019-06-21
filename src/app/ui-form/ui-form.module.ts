@@ -21,6 +21,7 @@ import { FormlyMaterialModule } from '@ngx-formly/material';
 // import { MatNativeDateModule } from '@angular/material/core';
 // import { AppMaterialModule } from './app/app-material/app-material.module';
 import { FormlyFieldTypeahead } from './types/typeahead.component';
+import { FormlyFieldVideoViewer } from './types';
 import { NgSelectModule } from '@ng-select/ng-select';
 // import { SharedModule } from '../shared.module';
 // import { FormlyMatDatepickerModule } from '@ngx-formly/material/datepicker';
@@ -89,7 +90,8 @@ import {
     // RepeatSectionComponent,
     FormlyFieldInputMoney,
     FormlyFieldInputPercentage,
-    FormlyFieldTypeahead
+    FormlyFieldTypeahead,
+    FormlyFieldVideoViewer
 
   ]
 })

@@ -11,18 +11,17 @@ import { KendraioFormService } from './ui-form/services/kendraio.form.service'
 export class AppComponent {
   form = new FormGroup({});
   model: any = {
-    firstName: 'Yellow Lorry',
+    title: 'The Forest',
     lastName: 'Norris',
-    age: 75,
-    bio: 'Born in the morning in the drizzlin rain. Trouble is his middle name',
-    password: 'noneed',
+    description: 'Born in the morning in the drizzlin rain. Trouble is his middle name',
+    videoUrl: ''
   };
   formConfig: any;
   options: FormlyFormOptions = {};
   jsonSchema: any;
   uiSchema: any;
   fields: FormlyFieldConfig[]
-  
+
   constructor(
     private formlyJsonschema: FormlyJsonschema,
     private formService: KendraioFormService
@@ -30,13 +29,16 @@ export class AppComponent {
     this.getJSONSchema() 
   }
 
+
   getJSONSchema() {
     this.formService.getFormData('youtube')
       .subscribe(([uiSchema, jsonSchema]) => {
           this.formConfig = this.formlyJsonschema.toFieldConfig(jsonSchema);
           this.fields = [this.formService.uiMapper(this.formConfig, jsonSchema, uiSchema)];
+              console.log(jsonSchema)
       });
   }
+
 
   submit() {
     alert(JSON.stringify(this.model));
