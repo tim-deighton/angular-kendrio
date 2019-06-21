@@ -7,7 +7,7 @@
 	],
 
 	"properties": {
-    		"videoUrl": {
+    		"videoId": {
 			"title": "Video URL",
 			"description": "",
 			"type": "videoviewer"

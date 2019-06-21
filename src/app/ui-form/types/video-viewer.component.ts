@@ -10,15 +10,16 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browse
 <div>
 <label>{{to.label}}</label>
 </div>
-<iframe class="e2e-iframe-trusted-src" width="640" height="390" [src]="videoUrl"></iframe>
+<iframe class="e2e-iframe-trusted-src" width="640" height="360" [src]="videoUrl"></iframe>
  `,
 })
-// tslint:disable-next-line: component-class-suffix
+
 export class FormlyFieldVideoViewer extends FieldType {
   @Input()
   formControl;
 
   videoUrl: any;
+
   constructor(
     private sanitizer: DomSanitizer
   ) {
@@ -26,7 +27,7 @@ export class FormlyFieldVideoViewer extends FieldType {
   }
 
   ngOnInit() {
-    this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.formControl.value);
+    this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.formControl.value);
   }
 
   // innerHTML: string =  "<iframe width='560' height='315' src='https://www.youtube.com/embed/YA9N4nsAxZo' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
