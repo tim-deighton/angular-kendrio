@@ -20,7 +20,7 @@ export class KendraioFormService {
   }
 
   getUI(formId: String) {
-    return this.http.get('assets/youtube-ui.json');
+    return this.http.get('assets/youtube-edit-vdeo-basic-UI.json');
   }
 
   getSchema(formId: string): Observable<any> {

@@ -29,7 +29,6 @@ export class AppComponent {
     this.getJSONSchema() 
   }
 
-
   getJSONSchema() {
     this.formService.getFormData('youtube')
       .subscribe(([uiSchema, jsonSchema]) => {
