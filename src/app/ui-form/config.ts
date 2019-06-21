@@ -18,7 +18,7 @@ import {
 import { FormlyFieldInputPercentage } from './types/percentage.component';
 import { ConfigOption } from '@ngx-formly/core';
 import { FormlyFieldTypeahead } from './types/typeahead.component';
-import { FormlyFieldVideoViewer, FormlyFieldInputMoney } from './types';
+import { FormlyFieldVideoViewer, FormlyFieldInputMoney, SelectTagsComponent } from './types';
 
 export const config: ConfigOption = {
   validationMessages: [
@@ -40,6 +40,7 @@ export const config: ConfigOption = {
     // { name: 'repeat', component: RepeatSectionComponent },
         {
       name: 'videoviewer', component: FormlyFieldVideoViewer },
+        {name: 'tags', component: SelectTagsComponent },
     {
       name: 'money', component: FormlyFieldInputMoney,
       defaultOptions: {

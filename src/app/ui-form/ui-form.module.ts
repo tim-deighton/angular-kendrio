@@ -13,7 +13,7 @@ import { PanelWrapperComponent,
 
 
 // import { RepeatSectionComponent } from './types/repeat-section.component';
-import { FormlyFieldInputMoney } from './types/money.component';
+import { FormlyFieldInputMoney, SelectTagsComponent } from './types/';
 import { FormlyFieldInputPercentage } from './types/percentage.component';
 
 import { config } from './config';
@@ -91,7 +91,8 @@ import {
     FormlyFieldInputMoney,
     FormlyFieldInputPercentage,
     FormlyFieldTypeahead,
-    FormlyFieldVideoViewer
+    FormlyFieldVideoViewer,
+    SelectTagsComponent
 
   ]
 })

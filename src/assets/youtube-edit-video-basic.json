@@ -19,7 +19,7 @@
 			"maxLength": 100
 		},
 		"country": {
-			"type": "typeahead",
+			"type": "tags",
 			"title": "tags",
 			"items": {
 				"type": "string",
