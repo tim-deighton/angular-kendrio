@@ -5,7 +5,7 @@ import { FieldType } from '@ngx-formly/core';
     selector: 'select-tags',
     changeDetection: ChangeDetectionStrategy.Default,
     template: `
-        <label>Tagging Press enter to add item</label>
+        <label>{{to.label}}</label>
  
         <ng-select [items]="[]"
                    [addTag]="true"
@@ -13,7 +13,6 @@ import { FieldType } from '@ngx-formly/core';
                    [selectOnTab]="true"
                    [isOpen]="false">
         </ng-select>
-        ---
     `
 })
 export class SelectTagsComponent  extends FieldType  {

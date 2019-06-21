@@ -18,13 +18,11 @@
 			"minLength": 2,
 			"maxLength": 100
 		},
-		"country": {
+		"tags": {
 			"type": "tags",
-			"title": "tags",
-			"items": {
-				"type": "string",
-				"default": "bazinga"
-			}
+			"title": "Tags ",
+      "description": "Press enter to add item"
+      
 		},
 		"description": {
 			"type": "textarea",
