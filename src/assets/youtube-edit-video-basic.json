@@ -8,9 +8,9 @@
 
 	"properties": {
     		"videoUrl": {
-			"title": "Title",
+			"title": "Video URL",
 			"description": "",
-			"type": "string",
+			"type": "videoviewer",
 			"minLength": 2,
 			"maxLength": 100
 		},
