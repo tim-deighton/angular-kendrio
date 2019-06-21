@@ -5,7 +5,6 @@
 	"required": [
 		"title"
 	],
-
 	"properties": {
     		"videoId": {
 			"title": "Video",
