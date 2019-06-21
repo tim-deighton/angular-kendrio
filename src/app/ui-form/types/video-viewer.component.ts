@@ -20,7 +20,7 @@ import { FieldType } from '@ngx-formly/core';
 // tslint:disable-next-line: component-class-suffix
 export class FormlyFieldVideoViewer extends FieldType {
 
-  innerHTML: string = "<iframe width='560' height='315' src='{{ to.label }}' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+  innerHTML: string =  "<iframe width='560' height='315' src='https://www.youtube.com/embed/YA9N4nsAxZo' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
 }
 
 
