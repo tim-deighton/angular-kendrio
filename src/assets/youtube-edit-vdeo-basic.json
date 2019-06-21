@@ -9,7 +9,7 @@
 	],
 	"properties": {
 
-		"artist": {
+		"title": {
 			"title": "Artist",
 			"description": "Please select your Artist",
 			"type": "string",
@@ -19,59 +19,24 @@
 				"The Fall"
 			]
 		},
-		"firstName": {
-			"type": "string",
-			"title": "Record Label"
-		},
-		"isdn": {
-			"type": "string",
-			"title": "ISDN"
-		},
+
+
 		"country": {
 			"type": "typeahead",
-			"title": "Region",
+			"title": "tags",
 			"items": {
 				"type": "string",
 				"default": "bazinga"
 			}
 		},
-		"age": {
-			"type": "number",
-			"title": "View Count"
-		},
-		"simpleDate": {
-			"title": "Release Date",
-			"type": "datepicker"
-		},
-		"bio": {
+
+		"description": {
 			"type": "textarea",
 			"title": "Bio"
 		},
-		"password": {
-			"type": "string",
-			"title": "Password",
-			"minLength": 3
-		},
-		"telephone": {
-			"type": "radio",
-			"title": "Genre",
-			"enum": [
-				"Punk",
-				"Reggea",
-				"Soul",
-				"Jazz"
-			]
-		},
-		"pay": {
-			"type": "money",
-			"title": "Income",
-			"minLength": 10,
-			"description": "(Less is more)"
-		},
-		"claim": {
-			"type": "percentage",
-			"title": "Claim Share"
-		}
+
+
+
 
 
 	}
