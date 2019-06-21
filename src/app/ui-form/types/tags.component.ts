@@ -13,6 +13,7 @@ import { FieldType } from '@ngx-formly/core';
                    [selectOnTab]="true"
                    [isOpen]="false">
         </ng-select>
+             <mat-hint> {{ to.description }} </mat-hint>
     `
 })
 export class SelectTagsComponent  extends FieldType  {

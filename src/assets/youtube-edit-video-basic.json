@@ -21,7 +21,7 @@
 		"tags": {
 			"type": "tags",
 			"title": "Tags ",
-      "description": "Press enter to add item"
+      "description": "Press enter to add a tag"
       
 		},
 		"description": {
