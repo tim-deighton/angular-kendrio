@@ -13,7 +13,7 @@ export class AppComponent {
   model: any = {
     title: 'The Forest',
     description: 'Born in the morning in the drizzlin rain. Trouble is his middle name',
-    videoId: 'YA9N4nsAxZo'
+    videoId: 'qqPXGIxae_Y'
   };
 
   formConfig: any;
